@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 const animalSchema = mongoose.Schema({
-    animal: {
+    animalN: {
         type: String,
         required: true
     },
@@ -14,7 +14,8 @@ const animalSchema = mongoose.Schema({
         require: true
     },
     keeper: {
-        type: String,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "User",
         required: true,
     },
     typeOfAnimal: {
